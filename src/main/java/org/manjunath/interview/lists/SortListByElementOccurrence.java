@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Sort the given input list based on number of occurrence of elements. Highest occurring element should be placed first in the List
+ */
 public class SortListByElementOccurrence {
 
     public static void main(String[] args) {
