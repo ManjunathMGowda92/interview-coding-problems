@@ -70,4 +70,27 @@ public class StringAnagram {
         }
         return true;
     }
+
+    public boolean isAnagramUsingStringBuilder(String str1, String str2) {
+        // If strings are not equal then return false.
+        if (str1.length() != str2.length()) {
+            return false;
+        }
+
+        // Create a StringBuilder with first string
+        StringBuilder builder = new StringBuilder(str1);
+
+        // Iterate through each character of second string
+        for (char c : str2.toCharArray()) {
+            // Get index of the character from the string builder
+            int index = builder.indexOf(c + "");
+
+            // if the index is not -1, then delete that character from the StringBuilder with index
+            if (index != -1) {
+                builder.deleteCharAt(index);
+            }
+        }
+        // Return is the StringBuilder is empty or not
+        return builder.isEmpty();
+    }
 }

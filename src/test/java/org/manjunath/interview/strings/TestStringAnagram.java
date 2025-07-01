@@ -65,4 +65,20 @@ public class TestStringAnagram {
 
         Assertions.assertFalse(obj.isAnagram(str1, str2));
     }
+
+    @Test
+    void testIsAnagramUsingStringBuilder() {
+        String str1 = "abcdefgh";
+        String str2 = "cdafbfhg";
+
+        Assertions.assertFalse(obj.isAnagramUsingStringBuilder(str1, str2));
+    }
+
+    @Test
+    void testIsAnagramUsingStringBuilderForFalse() {
+        String str1 = "abcdefgh";
+        String str2 = "cdaefbhg";
+
+        Assertions.assertTrue(obj.isAnagramUsingStringBuilder(str1, str2));
+    }
 }
