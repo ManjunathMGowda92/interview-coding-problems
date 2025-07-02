@@ -2,7 +2,21 @@ package org.manjunath.interview.arrays;
 
 public class ProductOfArrayElementsExceptSelf {
 
-
+    /**
+     * Finding the product of array elements except the self.
+     * <code>
+     * Ex: int[] arr = {1, 3, 5, 2, 4}, then the result array is {120, 40, 24, 60, 30}
+     * Result in product array is as below.
+     * 0th element - 3 * 5 * 2 * 4 => 120
+     * 1st element - 1 * 5 * 2 * 4 => 40 ....
+     * </code>
+     * The method creates 2 arbitrary arrays leftProduct and rightProduct, and calculates the
+     * product from left to right and right to left. Then final result is product of respective
+     * index elements from leftProduct and rightProduct arrays.
+     *
+     * @param nums Integer array
+     * @return Array with product of elements with self
+     */
     public int[] findProduct(int[] nums) {
         // Create 2 arbitrary arrays of same length
         int[] prefixArr = new int[nums.length];
@@ -49,7 +63,7 @@ public class ProductOfArrayElementsExceptSelf {
 
         // Iterate from right to left on Array and store the product of right elements and
         // current existing value (last index element should be multiplied with 1)
-        for (int i = nums.length -1; i>= 0; i--) {
+        for (int i = nums.length - 1; i >= 0; i--) {
             result[i] = result[i] * postfix;
             postfix *= nums[i];
         }
